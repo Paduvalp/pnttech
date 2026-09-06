@@ -421,11 +421,13 @@ header {
   @media screen and (max-width: 409px) {
     .page-nav {
       padding-top: 210px; } }
+  .page-nav h1,
   .page-nav h2 {
     font-size: 36px;
     width: 100%;
     color: #444; }
     @media screen and (max-width: 600px) {
+      .page-nav h1,
       .page-nav h2 {
         font-size: 26px; } }
   .page-nav ul li {

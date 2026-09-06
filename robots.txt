@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /assets/scss/
+Disallow: /assets/.sass-cache/
+Disallow: /assets/config-scss.bat
+
+Sitemap: https://www.pnttech.in/sitemap.xml
