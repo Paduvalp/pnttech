@@ -526,3 +526,319 @@ header {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+/* ===================================== Footer Redesign ================================== */
+.footer h2 {
+  position: relative;
+  padding-bottom: 12px;
+  font-weight: 700; }
+  .footer h2:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 45px;
+    height: 3px;
+    background-color: #D9534F; }
+
+.footer .link-list li {
+  transition: padding-left .25s ease, border-color .25s ease; }
+  .footer .link-list li:hover {
+    padding-left: 16px;
+    border-bottom-color: #D9534F; }
+  .footer .link-list li a {
+    text-decoration: none; }
+  .footer .link-list li:hover a,
+  .footer .link-list li:hover i {
+    color: #D9534F; }
+
+.footer .map-img {
+  font-weight: 400;
+  font-size: 15px;
+  padding-left: 20px; }
+  @media screen and (max-width: 767px) {
+    .footer .map-img {
+      padding-left: 0; } }
+
+.footer .footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+  .footer .footer-contact li {
+    display: flex;
+    align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px solid #5A5A5A;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #E4E4E4; }
+    .footer .footer-contact li:last-child {
+      border-bottom: none; }
+    .footer .footer-contact li i {
+      flex: 0 0 34px;
+      width: 34px;
+      height: 34px;
+      line-height: 34px;
+      margin-right: 14px;
+      text-align: center;
+      font-size: 14px;
+      color: #FFF;
+      background-color: #D9534F;
+      border-radius: 50%;
+      transition: background-color .25s ease; }
+    .footer .footer-contact li:hover i {
+      background-color: #C9302C; }
+    .footer .footer-contact li a {
+      color: #E4E4E4;
+      text-decoration: none;
+      transition: color .25s ease; }
+      .footer .footer-contact li a:hover {
+        color: #D9534F;
+        text-decoration: underline; }
+
+/* ===================================== Technologies CSS ================================== */
+.tech-stack {
+  padding: 50px;
+  background-color: #F8F9FA;
+  border-top: 1px solid #ECEFF1;
+  border-bottom: 1px solid #ECEFF1; }
+  @media screen and (max-width: 940px) {
+    .tech-stack {
+      padding: 30px 10px; } }
+  .tech-stack .inner-title h2 {
+    position: relative;
+    padding-bottom: 16px; }
+    .tech-stack .inner-title h2:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 60px;
+      height: 3px;
+      margin-left: -30px;
+      background-color: #D9534F; }
+  .tech-stack .inner-title p {
+    color: #777; }
+  .tech-stack .tech-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+  .tech-stack .tech-item {
+    width: 195px;
+    margin: 0 9px 18px;
+    padding: 26px 10px 22px;
+    background-color: #FFF;
+    border: 1px solid #ECEFF1;
+    border-bottom: 3px solid #ECEFF1;
+    border-radius: 4px;
+    text-align: center;
+    transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease; }
+    @media screen and (max-width: 480px) {
+      .tech-stack .tech-item {
+        width: 45%;
+        margin: 0 5px 12px; } }
+    .tech-stack .tech-item i {
+      display: block;
+      font-size: 40px;
+      line-height: 1;
+      margin-bottom: 14px;
+      color: #8A929A;
+      transition: color .25s ease; }
+    .tech-stack .tech-item h5 {
+      margin: 0 0 4px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #333; }
+    .tech-stack .tech-item span {
+      display: block;
+      font-size: 12.5px;
+      color: #8A929A; }
+    .tech-stack .tech-item:hover {
+      border-bottom-color: #D9534F;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .09);
+      transform: translateY(-4px); }
+      .tech-stack .tech-item:hover i {
+        color: #D9534F; }
+
+/* ===================================== Services Detail CSS ================================== */
+.services-detail {
+  padding: 50px; }
+  @media screen and (max-width: 940px) {
+    .services-detail {
+      padding: 30px 10px; } }
+  .services-detail .inner-title h2 {
+    position: relative;
+    padding-bottom: 16px; }
+    .services-detail .inner-title h2:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 60px;
+      height: 3px;
+      margin-left: -30px;
+      background-color: #D9534F; }
+  .services-detail .inner-title p {
+    color: #777; }
+  .services-detail .service-box {
+    height: 100%;
+    background-color: #FFF;
+    border: 1px solid #ECEFF1;
+    border-radius: 4px;
+    padding: 28px 26px;
+    margin-bottom: 30px;
+    transition: box-shadow .25s ease, border-color .25s ease; }
+    .services-detail .service-box:hover {
+      border-color: #E4E7E9;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, .08); }
+    .services-detail .service-box .service-head {
+      display: flex;
+      align-items: center;
+      margin-bottom: 14px; }
+      .services-detail .service-box .service-head i {
+        flex: 0 0 52px;
+        width: 52px;
+        height: 52px;
+        line-height: 52px;
+        margin-right: 16px;
+        text-align: center;
+        font-size: 22px;
+        color: #FFF;
+        background-color: #D9534F;
+        border-radius: 50%; }
+      .services-detail .service-box .service-head h4 {
+        margin: 0;
+        font-size: 19px;
+        font-weight: 700;
+        color: #333; }
+    .services-detail .service-box > p {
+      font-size: 15px;
+      line-height: 1.75;
+      color: #666;
+      text-align: left;
+      text-indent: 0;
+      margin-bottom: 14px; }
+    .services-detail .service-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid #EFF1F3;
+      padding-top: 14px; }
+      .services-detail .service-box ul li {
+        position: relative;
+        padding-left: 24px;
+        margin-bottom: 8px;
+        font-size: 14.5px;
+        color: #666; }
+        .services-detail .service-box ul li:before {
+          content: "\f00c";
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          position: absolute;
+          left: 0;
+          top: 1px;
+          font-size: 12px;
+          color: #D9534F; }
+
+/* ===================================== Work Process CSS ================================== */
+.work-process {
+  padding: 50px;
+  background-color: #F8F9FA;
+  border-top: 1px solid #ECEFF1;
+  border-bottom: 1px solid #ECEFF1; }
+  @media screen and (max-width: 940px) {
+    .work-process {
+      padding: 30px 10px; } }
+  .work-process .inner-title h2 {
+    position: relative;
+    padding-bottom: 16px; }
+    .work-process .inner-title h2:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 60px;
+      height: 3px;
+      margin-left: -30px;
+      background-color: #D9534F; }
+  .work-process .inner-title p {
+    color: #777; }
+  .work-process .process-step {
+    text-align: center;
+    padding: 10px 6px 20px; }
+    .work-process .process-step .step-num {
+      width: 56px;
+      height: 56px;
+      line-height: 52px;
+      margin: 0 auto 16px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #D9534F;
+      background-color: #FFF;
+      border: 2px solid #D9534F;
+      border-radius: 50%;
+      transition: background-color .25s ease, color .25s ease; }
+    .work-process .process-step:hover .step-num {
+      background-color: #D9534F;
+      color: #FFF; }
+    .work-process .process-step h5 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 8px; }
+    .work-process .process-step p {
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: #777;
+      text-align: center;
+      text-indent: 0;
+      margin: 0; }
+
+/* ===================================== Call To Action CSS ================================== */
+.cta-band {
+  padding: 40px 50px;
+  background-color: #444;
+  color: #FFF; }
+  @media screen and (max-width: 940px) {
+    .cta-band {
+      padding: 30px 10px;
+      text-align: center; } }
+  .cta-band .cta-text h3 {
+    margin: 0 0 8px;
+    font-size: 26px;
+    font-weight: 700;
+    color: #FFF; }
+  .cta-band .cta-text p {
+    margin: 0;
+    font-size: 15px;
+    color: #D7D7D7;
+    text-align: left;
+    text-indent: 0; }
+    @media screen and (max-width: 940px) {
+      .cta-band .cta-text p {
+        text-align: center; } }
+  .cta-band .cta-action {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; }
+    @media screen and (max-width: 940px) {
+      .cta-band .cta-action {
+        justify-content: center;
+        margin-top: 22px; } }
+  .cta-band .cta-btn {
+    display: inline-block;
+    padding: 13px 32px;
+    background-color: #D9534F;
+    color: #FFF;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: background-color .25s ease, transform .25s ease; }
+    .cta-band .cta-btn i {
+      margin-left: 8px; }
+    .cta-band .cta-btn:hover {
+      background-color: #C9302C;
+      color: #FFF;
+      text-decoration: none;
+      transform: translateY(-2px); }
