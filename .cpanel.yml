@@ -9,3 +9,5 @@ deployment:
     - /bin/cp contact_us.html $DEPLOYPATH
     - /bin/cp gallery.html $DEPLOYPATH
     - /bin/cp -R assets $DEPLOYPATH
+    - /bin/cp contact.php $DEPLOYPATH
+    - /bin/cp -R vendor $DEPLOYPATH
