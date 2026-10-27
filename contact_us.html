@@ -506,29 +506,38 @@
             return;
         }
 
-        /* All good - open the visitor's email client with the details filled in */
-        var name    = fields.name.el.value.trim();
-        var email   = fields.email.el.value.trim();
-        var mobile  = fields.mobile.el.value.trim();
-        var message = fields.message.el.value.trim();
+        /* All good - send the details to contact.php (PHPMailer) */
+        var submitBtn = form.querySelector('button[type="submit"]');
+        var btnText   = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
 
-        var subject = 'Website enquiry from ' + name;
-        var body    = 'Name: ' + name + '\n' +
-                      'Email: ' + email + '\n' +
-                      'Mobile: ' + mobile + '\n\n' +
-                      'Message:\n' + message;
-
-        var mailto = 'mailto:paduvalp@gmail.com' +
-                     '?subject=' + encodeURIComponent(subject) +
-                     '&body=' + encodeURIComponent(body);
-
-        showAlert('success', 'Thank you, ' + name + '. Your email application is opening - please press Send there to deliver your message.');
-
-        window.location.href = mailto;
-
-        form.reset();
-        Object.keys(fields).forEach(function (key) {
-            fields[key].el.classList.remove('is-valid', 'is-invalid');
+        fetch('contact.php', {
+            method: 'POST',
+            body: new FormData(form)
+        })
+        .then(function (res) {
+            return res.json().catch(function () {
+                return { success: false, message: 'Sorry, the message could not be sent right now. Please try again later.' };
+            });
+        })
+        .then(function (data) {
+            if (data.success) {
+                showAlert('success', data.message);
+                form.reset();
+                Object.keys(fields).forEach(function (key) {
+                    fields[key].el.classList.remove('is-valid', 'is-invalid');
+                });
+            } else {
+                showAlert('error', data.message);
+            }
+        })
+        .catch(function () {
+            showAlert('error', 'Sorry, the message could not be sent right now. Please check your connection and try again.');
+        })
+        .then(function () {
+            submitBtn.disabled = false;
+            submitBtn.textContent = btnText;
         });
     });
 })();
