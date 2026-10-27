@@ -66,9 +66,21 @@ try {
     $mail->SMTPAuth   = true;
     $mail->Username   = $config['smtp_username'];
     $mail->Password   = $config['smtp_password'];
-    $mail->SMTPSecure = $config['smtp_secure'] === 'tls' ? PHPMailer::ENCRYPTION_STARTTLS : PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port       = (int) $config['smtp_port'];
     $mail->CharSet    = 'UTF-8';
+    // fail fast instead of hanging until the proxy (e.g. Cloudflare 524) gives up
+    $mail->Timeout    = (int) ($config['smtp_timeout'] ?? 15);
+
+    $secure = $config['smtp_secure'] ?? 'ssl';
+    if ($secure === 'tls') {
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    } elseif ($secure === 'ssl') {
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    } else {
+        // no encryption: only for the mail server on the same machine (smtp_host 'localhost')
+        $mail->SMTPSecure  = '';
+        $mail->SMTPAutoTLS = false;
+    }
 
     $mail->setFrom($config['from_email'], $config['from_name']);
     $mail->addAddress($config['to_email'], $config['to_name']);
